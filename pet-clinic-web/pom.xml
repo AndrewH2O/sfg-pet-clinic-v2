@@ -16,8 +16,6 @@
     <wro4j.version>1.8.0</wro4j.version>
   </properties>
 
-
-
   <dependencies>
     <dependency>
       <artifactId>pet-clinic-data</artifactId>
@@ -96,9 +94,10 @@
         <configuration>
           <wroManagerFactory>ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory</wroManagerFactory>
           <cssDestinationFolder>${project.build.directory}/classes/static/resources/css</cssDestinationFolder>
+          <contextFolder>${basedir}/src/main/less</contextFolder>
           <wroFile>${basedir}/src/main/wro/wro.xml</wroFile>
           <extraConfigFile>${basedir}/src/main/wro/wro.properties</extraConfigFile>
-          <contextFolder>${basedir}/src/main/less</contextFolder>
+
         </configuration>
         <dependencies>
           <dependency>
