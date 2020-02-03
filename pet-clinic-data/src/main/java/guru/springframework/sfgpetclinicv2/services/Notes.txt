@@ -1,0 +1,3 @@
+Use profile to switch between either HashMap data structure based data-service or one base on Sql Database
+Annotate JPA service with profile @Profile("springdatajpa") but currently this is not set to active,
+so it will be ignored. Instead OwnerServiceMap will be used.
