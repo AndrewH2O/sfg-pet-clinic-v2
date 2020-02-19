@@ -8,6 +8,7 @@ class SfgPetClinicV2ApplicationTests {
 
     @Test
     void contextLoads() {
+        // integration test
     }
 
 }
