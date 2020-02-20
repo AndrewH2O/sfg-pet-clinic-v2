@@ -26,7 +26,7 @@ public class Owner extends Person {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Pet> pets = new HashSet<>();
 
-//
+
 //    public Owner(String firstName, String lastName) {
 //        super(firstName, lastName);
 //    }
@@ -38,5 +38,9 @@ public class Owner extends Person {
         this.city = city;
         this.telephone = telephone;
         this.pets = pets;
+
+        if (pets != null) {
+            this.pets = pets;
+        }
     }
 }
