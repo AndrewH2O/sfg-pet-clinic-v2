@@ -21,10 +21,16 @@ class OwnerMapServiceTest {
     @BeforeEach
     void setUp() {
         ownerMapService = new OwnerMapService(new PetTypeMapService(), new PetMapService());
+
+//        Owner owner = new Owner();
+//        owner.setId(1L);
+//        owner.setLastName(lastName);
+        //ownerMapService.save(owner);
         ownerMapService.save(Owner.builder()
                 .id(ownerId)
                 .lastName(lastName)
                 .build());
+
     }
 
     @Test
@@ -54,11 +60,16 @@ class OwnerMapServiceTest {
 
     @Test
     void findByLastName() {
-//        Owner jones = ownerMapService.findByLastName(lastName);
-//        assertNotNull(jones);
-//        assertEquals(1L, jones.getId());
+        Owner jones = ownerMapService.findByLastName(lastName);
+        assertNotNull(jones);
+        assertEquals(1L, jones.getId());
     }
 
+    @Test
+    void findByLastNameNotFound() {
+        Owner jones = ownerMapService.findByLastName("no name");
+        assertNull(jones);
+    }
 
     @Test
     void testSaveExistingId() {
