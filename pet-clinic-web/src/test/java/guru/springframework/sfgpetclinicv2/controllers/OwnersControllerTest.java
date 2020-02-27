@@ -66,6 +66,6 @@ class OwnersControllerTest extends AbstractMapService {
                 .andExpect(status().isOk())
                 .andExpect(view().name("notimplemented")); // view page notimplemented
 
-        verifyNoInteractions(ownerService);
+        verifyNoMoreInteractions(ownerService);
     }
 }
